@@ -1,6 +1,5 @@
-/* ========================================
-   1. SELECCIONAR ELEMENTOS DEL HTML
-======================================== */
+
+
 const menuToggle = document.getElementById("menu-toggle");
 const navMenu = document.getElementById("nav-menu");
 const navLinks = document.querySelectorAll(".nav-link");
@@ -8,9 +7,7 @@ const contactForm = document.getElementById("contact-form");
 const yearElement = document.getElementById("year");
 const formFeedback = document.getElementById("form-feedback");
 
-/* ========================================
-   2. ABRIR Y CERRAR EL MENÚ MÓVIL
-======================================== */
+// Menú de navegación
 function closeMenu() {
   if (!menuToggle || !navMenu) return;
 
@@ -22,8 +19,12 @@ function closeMenu() {
 if (menuToggle && navMenu) {
   menuToggle.addEventListener("click", () => {
     const isOpen = navMenu.classList.toggle("open");
+
     menuToggle.setAttribute("aria-expanded", String(isOpen));
-    menuToggle.setAttribute("aria-label", isOpen ? "Cerrar menú" : "Abrir menú");
+    menuToggle.setAttribute(
+      "aria-label",
+      isOpen ? "Cerrar menú" : "Abrir menú"
+    );
   });
 
   navLinks.forEach((link) => {
@@ -39,16 +40,12 @@ if (menuToggle && navMenu) {
   });
 }
 
-/* ========================================
-   3. ACTUALIZAR EL AÑO DEL PIE DE PÁGINA
-======================================== */
+// Año automático
 if (yearElement) {
   yearElement.textContent = new Date().getFullYear();
 }
 
-/* ========================================
-   4. RESALTAR LA SECCIÓN VISIBLE
-======================================== */
+// Navegación según la sección visible
 const sections = document.querySelectorAll("main section[id]");
 
 if ("IntersectionObserver" in window) {
@@ -60,7 +57,9 @@ if ("IntersectionObserver" in window) {
         const currentId = entry.target.id;
 
         navLinks.forEach((link) => {
-          const isCurrent = link.getAttribute("href") === `#${currentId}`;
+          const isCurrent =
+            link.getAttribute("href") === `#${currentId}`;
+
           link.classList.toggle("active", isCurrent);
         });
       });
@@ -74,33 +73,68 @@ if ("IntersectionObserver" in window) {
   sections.forEach((section) => sectionObserver.observe(section));
 }
 
-/* ========================================
-   5. PREPARAR UN MENSAJE DE CONTACTO
-   No envía datos a un servidor.
-======================================== */
+// Formulario de contacto con Formspree
 if (contactForm) {
-  contactForm.addEventListener("submit", (event) => {
+  contactForm.addEventListener("submit", async (event) => {
     event.preventDefault();
 
     if (!contactForm.reportValidity()) return;
 
-    const nombre = document.getElementById("nombre").value.trim();
-    const correo = document.getElementById("correo").value.trim();
-    const mensaje = document.getElementById("mensaje").value.trim();
-
-    if (!nombre || !correo || !mensaje) {
-      formFeedback.textContent = "Por favor, completa todos los campos.";
-      return;
-    }
-
-    const subject = encodeURIComponent(`Mensaje de ${nombre}`);
-    const body = encodeURIComponent(
-      `Nombre: ${nombre}\nCorreo: ${correo}\n\nMensaje:\n${mensaje}`
+    const submitButton = contactForm.querySelector(
+      'button[type="submit"]'
     );
 
-    formFeedback.textContent = "Se abrirá tu aplicación de correo para enviar el mensaje.";
-    window.location.href = `mailto:tu-correo@ejemplo.com?subject=${subject}&body=${body}`;
+    const originalText = submitButton
+      ? submitButton.innerHTML
+      : "";
+
+    if (submitButton) {
+      submitButton.disabled = true;
+      submitButton.textContent = "Enviando...";
+    }
+
+    if (formFeedback) {
+      formFeedback.textContent = "";
+    }
+
+    try {
+      const response = await fetch(
+        "https://formspree.io/f/mwllznbb",
+        {
+          method: "POST",
+          body: new FormData(contactForm),
+          headers: {
+            Accept: "application/json"
+          }
+        }
+      );
+
+      if (response.ok) {
+        if (formFeedback) {
+          formFeedback.textContent =
+            "¡Mensaje enviado correctamente! Gracias por contactarme.";
+        }
+
+        contactForm.reset();
+      } else {
+        if (formFeedback) {
+          formFeedback.textContent =
+            "No se pudo enviar el mensaje. Verifica el formulario e inténtalo nuevamente.";
+        }
+      }
+    } catch (error) {
+      if (formFeedback) {
+        formFeedback.textContent =
+          "Error de conexión. Comprueba tu Internet e inténtalo nuevamente.";
+      }
+    } finally {
+      if (submitButton) {
+        submitButton.disabled = false;
+        submitButton.innerHTML = originalText;
+      }
+    }
   });
 }
 
 console.log("Portafolio cargado correctamente.");
+
