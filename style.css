@@ -460,3 +460,23 @@ button, a { -webkit-tap-highlight-color: transparent; }
     animation-iteration-count: 1 !important;
   }
 }
+/* Accesibilidad con teclado */
+.project-card a:focus-visible {
+  outline: 2px solid #a78bfa;
+  outline-offset: 4px;
+}
+
+/* Evitar movimientos si el visitante lo solicita */
+@media (prefers-reduced-motion: reduce) {
+  .project-card,
+  .project-image img,
+  .tag-list span,
+  .project-footer a {
+    transition: none;
+  }
+
+  .project-card:hover,
+  .project-card:hover .project-image img {
+    transform: none;
+  }
+}
