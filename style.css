@@ -480,3 +480,91 @@ button, a { -webkit-tap-highlight-color: transparent; }
     transform: none;
   }
 }
+
+/* ACCIONES DE LAS TARJETAS */
+
+.project-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 22px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(148, 163, 184, 0.14);
+}
+
+.project-link,
+.project-coming {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.project-link {
+  color: #a78bfa;
+  text-decoration: none;
+  transition: color 0.25s ease, gap 0.25s ease;
+}
+
+.project-link:hover {
+  color: #60a5fa;
+  gap: 15px;
+}
+
+.project-coming {
+  color: #94a3b8;
+}
+
+.project-status {
+  padding: 6px 11px;
+  border-radius: 30px;
+  background: rgba(124, 58, 237, 0.13);
+  color: #c4b5fd;
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.project-status.planned {
+  background: rgba(148, 163, 184, 0.12);
+  color: #94a3b8;
+}
+
+/* EFECTOS DE LAS TARJETAS */
+
+.project-card {
+  transition: transform 0.3s ease,
+              border-color 0.3s ease,
+              box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(139, 92, 246, 0.65);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+}
+
+.project-card .tags span {
+  transition: transform 0.25s ease,
+              background 0.25s ease;
+}
+
+.project-card .tags span:hover {
+  transform: translateY(-3px);
+  background: rgba(124, 58, 237, 0.22);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-card,
+  .project-link,
+  .project-card .tags span {
+    transition: none;
+  }
+
+  .project-card:hover,
+  .project-card .tags span:hover {
+    transform: none;
+  }
+}
