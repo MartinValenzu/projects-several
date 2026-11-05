@@ -196,19 +196,53 @@
           <p>Si quieres conversar sobre tecnología, proyectos o compartir ideas, puedes escribirme.</p>
           <a class="contact-email" href="mailto:martinjoseangulogratetol@gmail.com">martinjoseangulogratetol@gmail.com <span>↗</span></a>
         </div>
-        <form class="contact-form" id="contact-form">
-          <label for="nombre">Nombre</label>
-          <input type="text" id="nombre" name="nombre" placeholder="¿Cómo te llamas?" required>
-          <label for="correo">Correo electrónico</label>
-          <input type="email" id="correo" name="correo" placeholder="tu@email.com" required>
-          <label for="mensaje">Mensaje</label>
-          <textarea id="mensaje" name="mensaje" rows="4" placeholder="Cuéntame tu idea..." required></textarea>
-          <button class="button button-primary form-button" type="submit">Preparar mensaje <span>→</span></button>
-          <p class="form-feedback" id="form-feedback" role="status" aria-live="polite"></p>
-        </form>
-      </div>
-    </section>
-  </main>
+        <form
+  class="contact-form"
+  id="contact-form"
+  action="https://formspree.io/f/mwllznbb"
+  method="POST"
+>
+  <label for="nombre">Nombre</label>
+  <input
+    type="text"
+    id="nombre"
+    name="nombre"
+    placeholder="¿Cómo te llamas?"
+    required
+  >
+
+  <label for="correo">Correo electrónico</label>
+  <input
+    type="email"
+    id="correo"
+    name="correo"
+    placeholder="tu@email.com"
+    required
+  >
+
+  <label for="mensaje">Mensaje</label>
+  <textarea
+    id="mensaje"
+    name="mensaje"
+    rows="4"
+    placeholder="Cuéntame tu idea..."
+    required
+  ></textarea>
+
+  <button
+    class="button button-primary form-button"
+    type="submit"
+  >
+    Enviar mensaje <span>→</span>
+  </button>
+
+  <p
+    class="form-feedback"
+    id="form-feedback"
+    role="status"
+    aria-live="polite"
+  ></p>
+</form>
 
   <footer class="site-footer">
     <div class="container footer-content">
