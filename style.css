@@ -814,8 +814,20 @@ main section[id] {
 /* Adaptación para tablets */
 @media (max-width: 900px) {
   .skill-category .skills-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+/* Distribuir mejor las tarjetas de categorías pequeñas */
+.skill-category .skill-card {
+  min-width: 0;
+}
+
+@media (min-width: 901px) {
+  .skill-category .skills-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
+}
 }
 
 /* Adaptación para móviles */
