@@ -1,452 +1,691 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Portafolio personal de desarrollo de software: proyectos, habilidades y contacto.">
+
+  <meta name="description" content="Portafolio personal de Martin Angulo: desarrollo de software, bases de datos, infraestructura y videojuegos.">
   <meta name="theme-color" content="#080d1b">
-  <title>Mi Portafolio | Desarrollador de Software</title>
+
+  <title>Martin Angulo | Desarrollador de Software en Formación</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
 </head>
+
 <body>
+
+  <!-- =========================
+       MENÚ DE NAVEGACIÓN
+  ========================== -->
+
   <header class="site-header">
     <nav class="navbar container" aria-label="Navegación principal">
-     <a class="logo" href="#sobre-mi" aria-label="Ir a Sobre mí">
-        <span class="logo-mark">&lt;/&gt;</span><span>Mi<span class="accent">Portafolio</span></span>
+
+      <a class="logo" href="#sobre-mi" aria-label="Ir a Sobre mí">
+        <span class="logo-mark">&lt;/&gt;</span>
+        <span>Mi<span class="accent">Portafolio</span></span>
       </a>
 
-      <button class="menu-toggle" id="menu-toggle" type="button"
-        aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-menu">
-        <span></span><span></span><span></span>
+      <button
+        class="menu-toggle"
+        id="menu-toggle"
+        type="button"
+        aria-label="Abrir menú"
+        aria-expanded="false"
+        aria-controls="nav-menu"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
       </button>
 
-     <ul class="nav-menu" id="nav-menu">
-  <li><a class="nav-link active" href="#sobre-mi">Sobre mí</a></li>
-  <li><a class="nav-link" href="#habilidades">Herramientas</a></li>
-  <li><a class="nav-link" href="#proyectos">Proyectos</a></li>
-  <li><a class="nav-link" href="#contacto">Contacto</a></li>
-</ul>
-     <a class="nav-cta" href="#contacto">Hablemos <span aria-hidden="true">↗</span></a>
+      <ul class="nav-menu" id="nav-menu">
+        <li><a class="nav-link active" href="#sobre-mi">Sobre mí</a></li>
+        <li><a class="nav-link" href="#habilidades">Herramientas</a></li>
+        <li><a class="nav-link" href="#proyectos">Proyectos</a></li>
+        <li><a class="nav-link" href="#contacto">Contacto</a></li>
+      </ul>
+
+      <a class="nav-cta" href="#contacto">
+        Hablemos <span aria-hidden="true">↗</span>
+      </a>
+
     </nav>
   </header>
 
+
   <main>
+
+    <!-- =========================
+         1. SOBRE MÍ / PRESENTACIÓN
+    ========================== -->
+
     <section class="hero section" id="sobre-mi">
+
       <div class="container hero-grid">
-       <div class="hero-copy">
-  <p class="eyebrow">
-    <span class="status-dot"></span>
-    DESARROLLADOR EN FORMACIÓN
-  </p>
 
-  <p class="intro">Hola, soy Martin Angulo</p>
+        <div class="hero-copy">
 
-  <h1>
-    Desarrollador de<br>
-    <span class="gradient-text">software en formación.</span>
-  </h1>
+          <p class="eyebrow">
+            <span class="status-dot"></span>
+            DESARROLLADOR EN FORMACIÓN
+          </p>
 
-  <p class="hero-description">
-    Me interesa el desarrollo de software, las bases de datos,
-    la infraestructura tecnológica y el desarrollo de videojuegos.
+          <p class="intro">Hola, soy Martin Angulo</p>
 
-    Actualmente estoy fortaleciendo mis conocimientos en
-    programación, SQL, hardware y redes, mientras desarrollo
-    proyectos para poner en práctica lo aprendido.
-  </p>
+          <h1>
+            Desarrollador de<br>
+            <span class="gradient-text">software en formación.</span>
+          </h1>
 
-  <div class="hero-actions">
-    <a class="button button-primary" href="#habilidades">
-      Conocer mis conocimientos <span>→</span>
-    </a>
+          <p class="hero-description">
+            Me interesa el desarrollo de software, las bases de datos,
+            la infraestructura tecnológica y el desarrollo de videojuegos.
 
-    <a class="button button-secondary" href="#proyectos">
-      Ver proyectos
-    </a>
-  </div>
+            Actualmente estoy fortaleciendo mis conocimientos en
+            programación, SQL, hardware y redes, mientras desarrollo
+            proyectos para poner en práctica lo aprendido.
+          </p>
 
-  <div class="hero-meta">
-    <span><span class="meta-symbol">⌘</span> Desarrollo de software</span>
-    <span><span class="meta-symbol">◈</span> Desarrollo de videojuegos</span>
-  </div>
-</div>
+          <div class="hero-actions">
+
+            <a class="button button-primary" href="#habilidades">
+              Conocer mis conocimientos <span>→</span>
+            </a>
+
+            <a class="button button-secondary" href="#proyectos">
+              Ver proyectos
+            </a>
+
+          </div>
+
+          <div class="hero-meta">
+            <span>
+              <span class="meta-symbol">⌘</span>
+              Desarrollo de software
+            </span>
+
+            <span>
+              <span class="meta-symbol">◈</span>
+              Desarrollo de videojuegos
+            </span>
+          </div>
+
+        </div>
+
+
+        <!-- ILUSTRACIÓN DE CÓDIGO -->
 
         <div class="hero-art" aria-label="Ilustración decorativa de código">
+
           <div class="orbit orbit-one"></div>
           <div class="orbit orbit-two"></div>
+
           <div class="code-card">
-            <div class="window-bar"><i></i><i></i><i></i><span>developer.py</span></div>
-            <div class="code-lines" aria-hidden="true">
-              <p><span class="line-number">01</span> <span class="code-purple">class</span> <span class="code-blue">Developer</span>:</p>
-              <p><span class="line-number">02</span> &nbsp;&nbsp;<span class="code-purple">def</span> <span class="code-yellow">__init__</span>(self):</p>
-              <p><span class="line-number">03</span> &nbsp;&nbsp;&nbsp;&nbsp;self.skills = [</p>
-              <p><span class="line-number">04</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-green">"Python"</span>,</p>
-              <p><span class="line-number">05</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-green">"SQL"</span>,</p>
-              <p><span class="line-number">06</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-green">"Web Dev"</span></p>
-              <p><span class="line-number">07</span> &nbsp;&nbsp;&nbsp;&nbsp;]</p>
-              <p><span class="line-number">08</span> &nbsp;&nbsp;&nbsp;&nbsp;self.mindset = <span class="code-green">"Keep learning"</span></p>
-              <p><span class="line-number">09</span> </p>
-              <p><span class="line-number">10</span> <span class="code-comment"># Turning ideas into code_</span></p>
+
+            <div class="window-bar">
+              <i></i>
+              <i></i>
+              <i></i>
+              <span>developer.py</span>
             </div>
+
+            <div class="code-lines" aria-hidden="true">
+
+              <p><span class="line-number">01</span> <span class="code-purple">class</span> <span class="code-blue">Developer</span>:</p>
+
+              <p><span class="line-number">02</span> &nbsp;&nbsp;<span class="code-purple">def</span> <span class="code-yellow">__init__</span>(self):</p>
+
+              <p><span class="line-number">03</span> &nbsp;&nbsp;&nbsp;&nbsp;self.skills = [</p>
+
+              <p><span class="line-number">04</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-green">"Python"</span>,</p>
+
+              <p><span class="line-number">05</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-green">"SQL"</span>,</p>
+
+              <p><span class="line-number">06</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-green">"Web Dev"</span></p>
+
+              <p><span class="line-number">07</span> &nbsp;&nbsp;&nbsp;&nbsp;]</p>
+
+              <p><span class="line-number">08</span> &nbsp;&nbsp;&nbsp;&nbsp;self.mindset = <span class="code-green">"Keep learning"</span></p>
+
+              <p><span class="line-number">09</span></p>
+
+              <p><span class="line-number">10</span> <span class="code-comment"># Turning ideas into code_</span></p>
+
+            </div>
+
           </div>
+
           <div class="floating-chip chip-python">Python</div>
           <div class="floating-chip chip-database">◉ SQL</div>
+
           <div class="glow glow-blue"></div>
           <div class="glow glow-purple"></div>
+
         </div>
+
       </div>
-      <a class="scroll-cue" href="#proyectos"><span></span> Desliza para explorar</a>
+
+      <a class="scroll-cue" href="#habilidades">
+        <span></span> Explora mis conocimientos
+      </a>
+
     </section>
 
-    <section class="section projects-section" id="proyectos">
-      <div class="container">
-        <div class="section-heading">
-          <p class="eyebrow">LO QUE ESTOY CONSTRUYENDO</p>
-          <h2>Proyectos <span class="gradient-text">destacados.</span></h2>
-          <p>Ideas que convierto en experiencias y soluciones reales.</p>
-        </div>
 
-       
-<div class="projects-grid">
-
-  <!-- PROYECTO 1: PIXEL QUEST -->
-  <article class="project-card featured-project">
-    <div class="project-art pixel-art">
-      <span class="project-label">
-        <span class="status-dot"></span> En desarrollo
-      </span>
-
-      <div class="pixel-scene" aria-hidden="true">
-        <span class="pixel-moon">☾</span>
-        <span class="pixel-star star-a">✦</span>
-        <span class="pixel-star star-b">✧</span>
-        <span class="pixel-player">♟</span>
-        <span class="pixel-ground"></span>
-      </div>
-
-      <span class="art-caption">
-        PIXEL QUEST <small>2D ADVENTURE</small>
-      </span>
-    </div>
-
-    <div class="project-info">
-      <div class="project-topline">
-        <span>VIDEOJUEGOS</span>
-        <span>01 / 03</span>
-      </div>
-
-      <h3>Pixel Quest</h3>
-
-      <p>
-        Videojuego 2D de aventuras y exploración con enemigos,
-        objetos, niveles y guardado de partidas.
-      </p>
-
-      <div class="tags">
-        <span>Python</span>
-        <span>Pygame</span>
-        <span>SQLite</span>
-      </div>
-
-      <span class="project-note">Proyecto en construcción</span>
-
-      <div class="project-actions">
-        <a href="https://github.com/" target="_blank"
-           rel="noopener noreferrer" class="project-link">
-          Ver proyecto <span>↗</span>
-        </a>
-        <span class="project-status">En desarrollo</span>
-      </div>
-    </div>
-  </article>
-
-  <!-- PROYECTO 2: INVENTARIO -->
-  <article class="project-card">
-    <div class="project-art inventory-art">
-      <span class="project-label">Proyecto planificado</span>
-
-      <div class="mock-window inventory-window" aria-hidden="true">
-        <div class="mock-window-head">
-          <span>Inventario</span><b>＋</b>
-        </div>
-        <div class="mock-stat-row"><i></i><i></i><i></i></div>
-        <div class="mock-table">
-          <b></b><b></b><b></b><b></b><b></b><b></b>
-        </div>
-      </div>
-
-      <span class="art-caption">
-        INVENTORY <small>MANAGEMENT SYSTEM</small>
-      </span>
-    </div>
-
-    <div class="project-info">
-      <div class="project-topline">
-        <span>APLICACIONES</span>
-        <span>02 / 03</span>
-      </div>
-
-      <h3>Sistema de Inventario</h3>
-
-      <p>
-        Aplicación para registrar productos, controlar existencias
-        y consultar movimientos.
-      </p>
-
-      <div class="tags">
-        <span>Python</span>
-        <span>SQLite</span>
-        <span>CRUD</span>
-      </div>
-
-      <details class="project-details">
-  <summary>Ver idea <span>＋</span></summary>
-  <div class="project-details-content">
-    <p>Aplicación de escritorio para administrar productos y existencias.</p>
-    <ul>
-      <li>Registrar y editar productos.</li>
-      <li>Controlar entradas y salidas.</li>
-      <li>Consultar el inventario disponible.</li>
-      <li>Guardar información en SQLite.</li>
-    </ul>
-    <span class="project-status planned">Planificado</span>
-  </div>
-</details>
-
-      <div class="project-actions">
-        <span class="project-coming">Próximamente</span>
-        <span class="project-status planned">Planificado</span>
-      </div>
-    </div>
-  </article>
-
-  <!-- PROYECTO 3: BIBLIOTECA -->
-  <article class="project-card">
-    <div class="project-art library-art">
-      <span class="project-label">Proyecto planificado</span>
-
-      <div class="book-stack" aria-hidden="true">
-        <i></i><i></i><i></i><i></i>
-      </div>
-
-      <span class="art-caption">
-        BOOKSHELF <small>LIBRARY SYSTEM</small>
-      </span>
-    </div>
-
-    <div class="project-info">
-      <div class="project-topline">
-        <span>BASES DE DATOS</span>
-        <span>03 / 03</span>
-      </div>
-
-      <h3>Gestión de Biblioteca</h3>
-
-      <p>
-        Sistema para administrar libros, usuarios,
-        préstamos y devoluciones.
-      </p>
-
-      <div class="tags">
-        <span>Python</span>
-        <span>SQL</span>
-        <span>Database</span>
-      </div>
-
-      <details class="project-details">
-  <summary>Ver idea <span>＋</span></summary>
-  <div class="project-details-content">
-    <p>Sistema para organizar libros y administrar los préstamos de una biblioteca.</p>
-    <ul>
-      <li>Registrar y consultar libros.</li>
-      <li>Administrar usuarios.</li>
-      <li>Registrar préstamos y devoluciones.</li>
-      <li>Consultar libros disponibles.</li>
-    </ul>
-    <span class="project-status planned">Planificado</span>
-  </div>
-</details>
-
-      <div class="project-actions">
-        <span class="project-coming">Próximamente</span>
-        <span class="project-status planned">Planificado</span>
-      </div>
-    </div>
-  </article>
-
-</div>
-</div>
-</section>
-</main>
-
+    <!-- =========================
+         2. HERRAMIENTAS Y CONOCIMIENTOS
+    ========================== -->
 
     <section class="section skills-section" id="habilidades">
+
       <div class="container">
+
         <div class="section-heading">
+
           <p class="eyebrow">MI CAJA DE HERRAMIENTAS</p>
-          <h2>Habilidades y <span class="gradient-text">tecnologías.</span></h2>
-          <p>Tecnologías que estoy aprendiendo y practicando.</p>
+
+          <h2>
+            Habilidades y
+            <span class="gradient-text">tecnologías.</span>
+          </h2>
+
+          <p>
+            Conocimientos y herramientas que utilizo,
+            estudio y sigo fortaleciendo.
+          </p>
+
         </div>
-           <div class="skills-grid">
 
-  <article class="skill-card">
-    <span class="skill-icon">C++</span>
-    <h3>C++</h3>
-    <p>Fundamentos de programación</p>
-  </article>
 
-  <article class="skill-card">
-    <span class="skill-icon python-icon">Py</span>
-    <h3>Python</h3>
-    <p>Conocimientos básicos</p>
-  </article>
+        <div class="skills-grid">
 
-  <article class="skill-card">
-    <span class="skill-icon sql-icon">SQL</span>
-    <h3>MySQL</h3>
-    <p>Bases de datos y consultas</p>
-  </article>
+          <article class="skill-card">
+            <span class="skill-icon">C++</span>
+            <h3>C++</h3>
+            <p>Fundamentos de programación</p>
+          </article>
 
-  <article class="skill-card">
-    <span class="skill-icon">Ex</span>
-    <h3>Excel</h3>
-    <p>Manejo de tablas y datos</p>
-  </article>
+          <article class="skill-card">
+            <span class="skill-icon python-icon">Py</span>
+            <h3>Python</h3>
+            <p>Conocimientos básicos</p>
+          </article>
 
-  <article class="skill-card">
-    <span class="skill-icon html-icon">5</span>
-    <h3>HTML5</h3>
-    <p>Estructura de páginas web</p>
-  </article>
+          <article class="skill-card">
+            <span class="skill-icon sql-icon">SQL</span>
+            <h3>MySQL</h3>
+            <p>Bases de datos y consultas</p>
+          </article>
 
-  <article class="skill-card">
-    <span class="skill-icon css-icon">3</span>
-    <h3>CSS3</h3>
-    <p>Diseño de interfaces web</p>
-  </article>
+          <article class="skill-card">
+            <span class="skill-icon">Ex</span>
+            <h3>Excel</h3>
+            <p>Manejo de tablas y datos</p>
+          </article>
 
-  <article class="skill-card">
-    <span class="skill-icon js-icon">JS</span>
-    <h3>JavaScript</h3>
-    <p>Interactividad web</p>
-  </article>
+          <article class="skill-card">
+            <span class="skill-icon html-icon">5</span>
+            <h3>HTML5</h3>
+            <p>Estructura de páginas web</p>
+          </article>
 
-  <article class="skill-card">
-    <span class="skill-icon git-icon">⌘</span>
-    <h3>Git y GitHub</h3>
-    <p>Control de versiones</p>
-  </article>
+          <article class="skill-card">
+            <span class="skill-icon css-icon">3</span>
+            <h3>CSS3</h3>
+            <p>Diseño de interfaces web</p>
+          </article>
 
-  <article class="skill-card">
-    <span class="skill-icon">PC</span>
-    <h3>Hardware</h3>
-    <p>Mantenimiento de equipos</p>
-  </article>
+          <article class="skill-card">
+            <span class="skill-icon js-icon">JS</span>
+            <h3>JavaScript</h3>
+            <p>Interactividad web</p>
+          </article>
 
-  <article class="skill-card">
-    <span class="skill-icon">IP</span>
-    <h3>Redes</h3>
-    <p>Direcciones IP y switches</p>
-  </article>
+          <article class="skill-card">
+            <span class="skill-icon git-icon">⌘</span>
+            <h3>Git y GitHub</h3>
+            <p>Control de versiones</p>
+          </article>
 
-  <article class="skill-card">
-    <span class="skill-icon">SRV</span>
-    <h3>Servidores</h3>
-    <p>Conceptos de infraestructura</p>
-  </article>
+          <article class="skill-card">
+            <span class="skill-icon">PC</span>
+            <h3>Hardware</h3>
+            <p>Mantenimiento de equipos</p>
+          </article>
 
-</div>    
-        <p class="learning-note"><span>✦</span> En constante aprendizaje: cada proyecto es una oportunidad para mejorar.</p>
+          <article class="skill-card">
+            <span class="skill-icon">IP</span>
+            <h3>Redes</h3>
+            <p>Direcciones IP y switches</p>
+          </article>
+
+          <article class="skill-card">
+            <span class="skill-icon">SRV</span>
+            <h3>Servidores</h3>
+            <p>Conceptos de infraestructura</p>
+          </article>
+
+        </div>
+
+        <p class="learning-note">
+          <span>✦</span>
+          En constante aprendizaje: cada proyecto es una oportunidad para mejorar.
+        </p>
+
       </div>
+
     </section>
 
-    <section class="section about-section" id="sobre-mi">
-      <div class="container about-grid">
-        <div class="about-visual">
-          <div class="about-orb"><span>&lt;code/&gt;</span></div>
-          <div class="about-mini-card"><span class="mini-icon">⌘</span><span><b>Curiosidad</b><small>La base de aprender</small></span></div>
-          <div class="about-mini-card second-mini"><span class="mini-icon">✦</span><span><b>Creatividad</b><small>Ideas en construcción</small></span></div>
+
+    <!-- =========================
+         3. PROYECTOS
+    ========================== -->
+
+    <section class="section projects-section" id="proyectos">
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <p class="eyebrow">LO QUE ESTOY CONSTRUYENDO</p>
+
+          <h2>
+            Proyectos
+            <span class="gradient-text">destacados.</span>
+          </h2>
+
+          <p>
+            Ideas que convierto en experiencias y soluciones reales.
+          </p>
+
         </div>
-        <div class="about-copy">
-          <p class="eyebrow">CONOCE AL DESARROLLADOR</p>
-          <h2>Aprender, crear y <span class="gradient-text">resolver.</span></h2>
-          <p>Estoy construyendo mi camino en el desarrollo de software. Me interesa comprender cómo funcionan las aplicaciones, cómo se organizan los datos y cómo transformar una idea en un programa útil.</p>
-          <p>Disfruto especialmente trabajar con bases de datos y explorar el desarrollo de videojuegos. Este portafolio será el registro de mi evolución, mis proyectos y todo lo que voy aprendiendo.</p>
-          <div class="about-facts">
-            <div><strong>01</strong><span>Aprender haciendo</span></div>
-            <div><strong>02</strong><span>Construir proyectos</span></div>
-            <div><strong>03</strong><span>Mejorar cada día</span></div>
-          </div>
+
+
+        <div class="projects-grid">
+
+
+          <!-- PROYECTO 1: PIXEL QUEST -->
+
+          <article class="project-card featured-project">
+
+            <div class="project-art pixel-art">
+
+              <span class="project-label">
+                <span class="status-dot"></span>
+                En desarrollo
+              </span>
+
+              <div class="pixel-scene" aria-hidden="true">
+                <span class="pixel-moon">☾</span>
+                <span class="pixel-star star-a">✦</span>
+                <span class="pixel-star star-b">✧</span>
+                <span class="pixel-player">♟</span>
+                <span class="pixel-ground"></span>
+              </div>
+
+              <span class="art-caption">
+                PIXEL QUEST <small>2D ADVENTURE</small>
+              </span>
+
+            </div>
+
+
+            <div class="project-info">
+
+              <div class="project-topline">
+                <span>VIDEOJUEGOS</span>
+                <span>01 / 03</span>
+              </div>
+
+              <h3>Pixel Quest</h3>
+
+              <p>
+                Videojuego 2D de aventuras y exploración con enemigos,
+                objetos, niveles y guardado de partidas.
+              </p>
+
+              <div class="tags">
+                <span>Python</span>
+                <span>Pygame</span>
+                <span>SQLite</span>
+              </div>
+
+              <span class="project-note">
+                Proyecto en construcción
+              </span>
+
+              <div class="project-actions">
+
+                <a
+                  href="https://github.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="project-link"
+                >
+                  Ver proyecto <span>↗</span>
+                </a>
+
+                <span class="project-status">En desarrollo</span>
+
+              </div>
+
+            </div>
+
+          </article>
+
+
+          <!-- PROYECTO 2: INVENTARIO -->
+
+          <article class="project-card">
+
+            <div class="project-art inventory-art">
+
+              <span class="project-label">
+                Proyecto planificado
+              </span>
+
+              <div class="mock-window inventory-window" aria-hidden="true">
+
+                <div class="mock-window-head">
+                  <span>Inventario</span>
+                  <b>＋</b>
+                </div>
+
+                <div class="mock-stat-row">
+                  <i></i>
+                  <i></i>
+                  <i></i>
+                </div>
+
+                <div class="mock-table">
+                  <b></b>
+                  <b></b>
+                  <b></b>
+                  <b></b>
+                  <b></b>
+                  <b></b>
+                </div>
+
+              </div>
+
+              <span class="art-caption">
+                INVENTORY <small>MANAGEMENT SYSTEM</small>
+              </span>
+
+            </div>
+
+
+            <div class="project-info">
+
+              <div class="project-topline">
+                <span>APLICACIONES</span>
+                <span>02 / 03</span>
+              </div>
+
+              <h3>Sistema de Inventario</h3>
+
+              <p>
+                Aplicación para registrar productos, controlar existencias
+                y consultar movimientos.
+              </p>
+
+              <div class="tags">
+                <span>Python</span>
+                <span>SQLite</span>
+                <span>CRUD</span>
+              </div>
+
+              <details class="project-details">
+
+                <summary>
+                  Ver idea <span>＋</span>
+                </summary>
+
+                <div class="project-details-content">
+
+                  <p>
+                    Aplicación de escritorio para administrar productos y existencias.
+                  </p>
+
+                  <ul>
+                    <li>Registrar y editar productos.</li>
+                    <li>Controlar entradas y salidas.</li>
+                    <li>Consultar el inventario disponible.</li>
+                    <li>Guardar información en SQLite.</li>
+                  </ul>
+
+                  <span class="project-status planned">
+                    Planificado
+                  </span>
+
+                </div>
+
+              </details>
+
+              <div class="project-actions">
+                <span class="project-coming">Próximamente</span>
+                <span class="project-status planned">Planificado</span>
+              </div>
+
+            </div>
+
+          </article>
+
+
+          <!-- PROYECTO 3: BIBLIOTECA -->
+
+          <article class="project-card">
+
+            <div class="project-art library-art">
+
+              <span class="project-label">
+                Proyecto planificado
+              </span>
+
+              <div class="book-stack" aria-hidden="true">
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+              </div>
+
+              <span class="art-caption">
+                BOOKSHELF <small>LIBRARY SYSTEM</small>
+              </span>
+
+            </div>
+
+
+            <div class="project-info">
+
+              <div class="project-topline">
+                <span>BASES DE DATOS</span>
+                <span>03 / 03</span>
+              </div>
+
+              <h3>Gestión de Biblioteca</h3>
+
+              <p>
+                Sistema para administrar libros, usuarios,
+                préstamos y devoluciones.
+              </p>
+
+              <div class="tags">
+                <span>Python</span>
+                <span>SQL</span>
+                <span>Database</span>
+              </div>
+
+              <details class="project-details">
+
+                <summary>
+                  Ver idea <span>＋</span>
+                </summary>
+
+                <div class="project-details-content">
+
+                  <p>
+                    Sistema para organizar libros y administrar
+                    los préstamos de una biblioteca.
+                  </p>
+
+                  <ul>
+                    <li>Registrar y consultar libros.</li>
+                    <li>Administrar usuarios.</li>
+                    <li>Registrar préstamos y devoluciones.</li>
+                    <li>Consultar libros disponibles.</li>
+                  </ul>
+
+                  <span class="project-status planned">
+                    Planificado
+                  </span>
+
+                </div>
+
+              </details>
+
+              <div class="project-actions">
+                <span class="project-coming">Próximamente</span>
+                <span class="project-status planned">Planificado</span>
+              </div>
+
+            </div>
+
+          </article>
+
+
         </div>
+
       </div>
+
     </section>
+
+
+    <!-- =========================
+         4. CONTACTO
+    ========================== -->
 
     <section class="section contact-section" id="contacto">
+
       <div class="container contact-grid">
+
         <div class="contact-copy">
+
           <p class="eyebrow">¿TIENES UNA IDEA?</p>
-          <h2>Hagamos algo <span class="gradient-text">genial.</span></h2>
-          <p>Si quieres conversar sobre tecnología, proyectos o compartir ideas, puedes escribirme.</p>
-          <a class="contact-email" href="mailto:martinjoseangulogratetol@gmail.com">martinjoseangulogratetol@gmail.com <span>↗</span></a>
+
+          <h2>
+            Hagamos algo
+            <span class="gradient-text">genial.</span>
+          </h2>
+
+          <p>
+            Si quieres conversar sobre tecnología, proyectos
+            o compartir ideas, puedes escribirme.
+          </p>
+
+          <a
+            class="contact-email"
+            href="mailto:martinjoseangulogratetol@gmail.com"
+          >
+            martinjoseangulogratetol@gmail.com
+            <span>↗</span>
+          </a>
+
         </div>
+
+
+        <!-- FORMULARIO CON FORMSpREE -->
+
         <form
-  class="contact-form"
-  id="contact-form"
-  action="https://formspree.io/f/mwllznbb"
-  method="POST"
->
-  <label for="nombre">Nombre</label>
-  <input
-    type="text"
-    id="nombre"
-    name="nombre"
-    placeholder="¿Cómo te llamas?"
-    required
-  >
+          class="contact-form"
+          id="contact-form"
+          action="https://formspree.io/f/mwllznbb"
+          method="POST"
+        >
 
-  <label for="correo">Correo electrónico</label>
-  <input
-    type="email"
-    id="correo"
-    name="correo"
-    placeholder="tu@email.com"
-    required
-  >
+          <label for="nombre">Nombre</label>
 
-  <label for="mensaje">Mensaje</label>
-  <textarea
-    id="mensaje"
-    name="mensaje"
-    rows="4"
-    placeholder="Cuéntame tu idea..."
-    required
-  ></textarea>
+          <input
+            type="text"
+            id="nombre"
+            name="nombre"
+            placeholder="¿Cómo te llamas?"
+            required
+          >
 
-  <button
-    class="button button-primary form-button"
-    type="submit"
-  >
-    Enviar mensaje <span>→</span>
-  </button>
+          <label for="correo">Correo electrónico</label>
 
-  <p
-    class="form-feedback"
-    id="form-feedback"
-    role="status"
-    aria-live="polite"
-  ></p>
-</form>
+          <input
+            type="email"
+            id="correo"
+            name="correo"
+            placeholder="tu@email.com"
+            required
+          >
+
+          <label for="mensaje">Mensaje</label>
+
+          <textarea
+            id="mensaje"
+            name="mensaje"
+            rows="4"
+            placeholder="Cuéntame tu idea..."
+            required
+          ></textarea>
+
+          <button
+            class="button button-primary form-button"
+            type="submit"
+          >
+            Enviar mensaje <span>→</span>
+          </button>
+
+          <p
+            class="form-feedback"
+            id="form-feedback"
+            role="status"
+            aria-live="polite"
+          ></p>
+
+        </form>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =========================
+       PIE DE PÁGINA
+  ========================== -->
 
   <footer class="site-footer">
+
     <div class="container footer-content">
-      <a class="logo" href="#inicio"><span class="logo-mark">&lt;/&gt;</span><span>Mi<span class="accent">Portafolio</span></span></a>
+
+      <a class="logo" href="#sobre-mi">
+        <span class="logo-mark">&lt;/&gt;</span>
+        <span>Mi<span class="accent">Portafolio</span></span>
+      </a>
+
       <p>Construido con curiosidad y código.</p>
-      <p class="copyright">© <span id="year"></span> Mi Portafolio</p>
+
+      <p class="copyright">
+        © <span id="year"></span> Mi Portafolio
+      </p>
+
     </div>
+
   </footer>
+
 </body>
 </html>
