@@ -725,3 +725,114 @@ main section[id] {
   outline: 2px solid var(--blue);
   outline-offset: 4px;
 }
+
+/* =================================
+   CATEGORÍAS DE HABILIDADES
+================================= */
+
+.skills-categories {
+  display: grid;
+  gap: 48px;
+}
+
+.skill-category {
+  width: 100%;
+}
+
+.category-heading {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.category-number {
+  display: grid;
+  place-items: center;
+  min-width: 43px;
+  height: 43px;
+  border: 1px solid rgba(125, 145, 190, .25);
+  border-radius: 12px;
+  color: #9c83ff;
+  background: rgba(117, 91, 220, .12);
+  font-size: .78rem;
+  font-weight: 800;
+}
+
+.category-heading h3 {
+  color: var(--text);
+  font-size: 1.1rem;
+}
+
+.category-heading p {
+  margin-top: 2px;
+  color: var(--muted);
+  font-size: .78rem;
+}
+
+/* Cuadrícula de cada categoría */
+.skill-category .skills-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+/* Colores de los iconos */
+.cpp-icon {
+  color: #91bfff;
+  background: rgba(59, 156, 255, .13);
+}
+
+.excel-icon {
+  color: #75d9a7;
+  background: rgba(64, 190, 125, .13);
+}
+
+.hardware-icon {
+  color: #c4a6ff;
+  background: rgba(154, 101, 255, .14);
+}
+
+.network-icon {
+  color: #71d6e9;
+  background: rgba(75, 190, 215, .13);
+}
+
+.server-icon {
+  color: #ffbd79;
+  background: rgba(255, 166, 83, .13);
+}
+
+/* Uniformidad de las tarjetas */
+.skill-card {
+  min-height: 145px;
+}
+
+.skill-icon {
+  font-size: .88rem;
+}
+
+/* Adaptación para tablets */
+@media (max-width: 900px) {
+  .skill-category .skills-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Adaptación para móviles */
+@media (max-width: 480px) {
+  .skills-categories {
+    gap: 35px;
+  }
+
+  .skill-category .skills-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .skill-card {
+    min-height: 125px;
+  }
+
+  .category-heading {
+    gap: 12px;
+  }
+}
