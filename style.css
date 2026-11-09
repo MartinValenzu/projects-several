@@ -1038,11 +1038,6 @@ button, a { -webkit-tap-highlight-color: transparent; }
   flex-direction: column;
 }
 
-.project-info .tags {
-  margin-top: auto;
-  padding-top: 15px;
-}
-
 /* Mejor lectura de los textos */
 .project-info p {
   line-height: 1.7;
