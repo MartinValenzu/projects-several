@@ -136,5 +136,63 @@ if (contactForm) {
   });
 }
 
+// =================================
+// FILTROS DE PROYECTOS
+// =================================
+
+const filterButtons = document.querySelectorAll(".filter-btn");
+const projectCards = document.querySelectorAll(".project-card");
+const emptyMessage = document.querySelector(".filter-empty");
+
+if (filterButtons.length > 0 && projectCards.length > 0) {
+
+  filterButtons.forEach((button) => {
+
+    button.addEventListener("click", () => {
+
+      const selectedFilter = button.dataset.filter;
+      let visibleProjects = 0;
+
+      // Actualizar botón activo
+      filterButtons.forEach((filterButton) => {
+
+        const isActive = filterButton === button;
+
+        filterButton.classList.toggle("active", isActive);
+        filterButton.setAttribute(
+          "aria-pressed",
+          String(isActive)
+        );
+
+      });
+
+      // Mostrar u ocultar proyectos
+      projectCards.forEach((card) => {
+
+        const category = card.dataset.category;
+
+        const shouldShow =
+          selectedFilter === "todos" ||
+          category === selectedFilter;
+
+        card.hidden = !shouldShow;
+
+        if (shouldShow) {
+          visibleProjects++;
+        }
+
+      });
+
+      // Mensaje cuando no hay proyectos
+      if (emptyMessage) {
+        emptyMessage.hidden = visibleProjects > 0;
+      }
+
+    });
+
+  });
+
+}
+
 console.log("Portafolio cargado correctamente.");
 
