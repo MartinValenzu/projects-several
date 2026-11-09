@@ -1193,3 +1193,70 @@ main section[id] {
     gap: 12px;
   }
 }
+
+/* =================================
+   FILTROS DE PROYECTOS
+================================= */
+
+.project-filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin: 0 0 28px;
+}
+
+.filter-btn {
+  padding: 9px 16px;
+  border: 1px solid var(--border);
+  border-radius: 30px;
+  background: var(--panel);
+  color: var(--muted);
+  font-size: .78rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background .2s ease,
+              color .2s ease,
+              border-color .2s ease,
+              transform .2s ease;
+}
+
+.filter-btn:hover {
+  transform: translateY(-2px);
+  border-color: var(--blue);
+  color: var(--text);
+}
+
+.filter-btn.active {
+  border-color: transparent;
+  background: linear-gradient(110deg, var(--blue), var(--purple));
+  color: white;
+}
+
+.filter-btn:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 4px;
+}
+
+.project-card[hidden] {
+  display: none;
+}
+
+.filter-empty {
+  margin: 20px 0;
+  color: var(--muted);
+  font-size: .9rem;
+  text-align: center;
+}
+
+@media (max-width: 480px) {
+  .project-filters {
+    justify-content: flex-start;
+    gap: 8px;
+  }
+
+  .filter-btn {
+    padding: 8px 12px;
+    font-size: .72rem;
+  }
+}
