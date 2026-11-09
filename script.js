@@ -62,6 +62,14 @@ if ("IntersectionObserver" in window) {
 
           link.classList.toggle("active", isCurrent);
         });
+        
+        // Puntos laterales de navegación
+        document.querySelectorAll(".side-dot").forEach((dot) => {
+          dot.classList.toggle(
+            "active",
+            dot.getAttribute("href") === `#${currentId}`
+          );
+        });
       });
     },
     {
