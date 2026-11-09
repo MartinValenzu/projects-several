@@ -1398,3 +1398,132 @@ body::after {
   body::before, body::after { animation: none; }
   .reveal { opacity: 1; }
 }
+/* =================================
+   LATERALES PARA PANTALLAS ANCHAS
+   Ocultos por debajo de 1360px para no estorbar.
+================================= */
+.side-symbols, .side-rail, .side-dots { display: none; }
+
+@media (min-width: 1360px) {
+
+  /* Zona lateral = (ancho de pantalla - contenedor) / 2 */
+  .side-symbols {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    --lateral: calc((100vw - var(--container)) / 2);
+  }
+
+  .sym {
+    position: absolute;
+    font-family: "Consolas", "Courier New", monospace;
+    font-weight: 700;
+    color: var(--blue);
+    opacity: .2;
+    text-shadow: 0 0 18px rgba(59, 156, 255, .45);
+    animation: floatSym 9s ease-in-out infinite;
+  }
+  .sym:nth-child(even) { color: var(--purple); text-shadow: 0 0 18px rgba(154, 101, 255, .45); }
+
+  /* left = fracción de la zona lateral izquierda; right = fracción de la derecha */
+  .sym-l1 { left: calc(var(--lateral) * .45); top: 16%; font-size: 2.6rem; animation-duration: 9s; }
+  .sym-l2 { left: calc(var(--lateral) * .20); top: 32%; font-size: 1.8rem; animation-duration: 11s; animation-delay: -3s; }
+  .sym-l3 { left: calc(var(--lateral) * .55); top: 47%; font-size: 1.4rem; animation-duration: 8s;  animation-delay: -5s; }
+  .sym-l4 { left: calc(var(--lateral) * .25); top: 62%; font-size: 2rem;   animation-duration: 12s; animation-delay: -2s; }
+
+  .sym-r1 { right: calc(var(--lateral) * .30); top: 14%; font-size: 1.6rem; animation-duration: 10s; animation-delay: -1s; }
+  .sym-r2 { right: calc(var(--lateral) * .55); top: 30%; font-size: 3rem;   animation-duration: 13s; animation-delay: -6s; }
+  .sym-r3 { right: calc(var(--lateral) * .25); top: 70%; font-size: 2.8rem; animation-duration: 9s;  animation-delay: -4s; }
+  .sym-r4 { right: calc(var(--lateral) * .50); top: 84%; font-size: 1.8rem; animation-duration: 11s; animation-delay: -7s; }
+
+  /* Barra izquierda con enlaces */
+  .side-rail {
+    display: flex;
+    position: fixed;
+    left: calc(var(--lateral) * .5 - 14px);
+    bottom: 0;
+    z-index: 40;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+  }
+  .side-rail a {
+    display: grid;
+    place-items: center;
+    width: 40px;
+    height: 40px;
+    color: var(--muted);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: rgba(16, 27, 49, .6);
+    transition: color .25s ease, border-color .25s ease, transform .25s ease, box-shadow .25s ease;
+  }
+  .side-rail a:hover {
+    color: var(--text);
+    border-color: rgba(59, 156, 255, .6);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 22px rgba(59, 156, 255, .25);
+  }
+  .rail-line {
+    width: 1px;
+    height: 110px;
+    background: linear-gradient(to bottom, var(--blue), transparent);
+  }
+
+  /* Puntos de navegación a la derecha */
+  .side-dots {
+    display: flex;
+    position: fixed;
+    right: calc(var(--lateral) * .5 - 6px);
+    top: 50%;
+    z-index: 40;
+    flex-direction: column;
+    gap: 18px;
+    transform: translateY(-50%);
+  }
+  .side-dot {
+    position: relative;
+    width: 12px;
+    height: 12px;
+    border: 2px solid var(--muted);
+    border-radius: 50%;
+    transition: background .3s ease, border-color .3s ease, transform .3s ease, box-shadow .3s ease;
+  }
+  .side-dot:hover { border-color: var(--blue); transform: scale(1.25); }
+  .side-dot.active {
+    background: var(--blue);
+    border-color: var(--blue);
+    box-shadow: 0 0 14px rgba(59, 156, 255, .8);
+    transform: scale(1.2);
+  }
+  .side-dot::before {
+    content: attr(data-label);
+    position: absolute;
+    right: 26px;
+    top: 50%;
+    padding: 5px 10px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--panel);
+    color: var(--text);
+    font-size: .74rem;
+    font-weight: 600;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(8px, -50%);
+    transition: opacity .2s ease, transform .2s ease;
+  }
+  .side-dot:hover::before { opacity: 1; transform: translate(0, -50%); }
+}
+
+@keyframes floatSym {
+  0%, 100% { transform: translateY(0) rotate(-4deg); }
+  50%      { transform: translateY(-22px) rotate(4deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sym { animation: none; }
+}
