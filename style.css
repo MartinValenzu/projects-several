@@ -1261,24 +1261,25 @@ main section[id] {
 
 body {
   background-color: #080d1b;
+
   background-image:
     radial-gradient(
       ellipse at 12% 15%,
-      rgba(59, 130, 246, 0.13),
+      rgba(59, 130, 246, 0.10),
       transparent 38%
     ),
     radial-gradient(
       ellipse at 88% 45%,
-      rgba(154, 101, 255, 0.12),
+      rgba(154, 101, 255, 0.09),
       transparent 38%
     ),
     linear-gradient(
-      rgba(120, 150, 210, 0.025) 1px,
+      rgba(120, 150, 210, 0.02) 1px,
       transparent 1px
     ),
     linear-gradient(
       90deg,
-      rgba(120, 150, 210, 0.025) 1px,
+      rgba(120, 150, 210, 0.02) 1px,
       transparent 1px
     );
 
@@ -1288,10 +1289,9 @@ body {
     45px 45px,
     45px 45px;
 
-  background-attachment: fixed;
+  /* Sin fondo fijo ni movimiento */
+  background-attachment: scroll;
 }
-
-
 /* =================================
    ANIMACIONES DE APARICIÓN
 ================================= */
@@ -1318,4 +1318,12 @@ body {
     transform: none;
     transition: none;
   }
+}
+/* PRUEBA TEMPORAL DE RENDIMIENTO */
+
+.reveal,
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+  transition: none;
 }
