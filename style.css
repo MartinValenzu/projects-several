@@ -1260,3 +1260,91 @@ main section[id] {
     font-size: .72rem;
   }
 }
+
+/* =================================
+   FONDO TECNOLÓGICO GLOBAL
+================================= */
+
+body {
+  position: relative;
+  isolation: isolate;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      ellipse at 12% 20%,
+      rgba(59, 130, 246, .12),
+      transparent 35%
+    ),
+    radial-gradient(
+      ellipse at 88% 45%,
+      rgba(139, 92, 246, .11),
+      transparent 36%
+    ),
+    linear-gradient(
+      rgba(120, 150, 210, .025) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(120, 150, 210, .025) 1px,
+      transparent 1px
+    );
+
+  background-size:
+    auto,
+    auto,
+    45px 45px,
+    45px 45px;
+
+  animation: ambientBackground 18s ease-in-out infinite alternate;
+}
+
+@keyframes ambientBackground {
+  from {
+    background-position: 0 0, 0 0, 0 0, 0 0;
+  }
+
+  to {
+    background-position: 25px 15px, -20px 25px, 0 0, 0 0;
+  }
+}
+
+/* =================================
+   ANIMACIONES AL DESPLAZARSE
+================================= */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity .7s ease,
+    transform .7s cubic-bezier(.2, .7, .2, 1);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Accesibilidad */
+
+@media (prefers-reduced-motion: reduce) {
+  body::before {
+    animation: none;
+  }
+
+  .reveal,
+  .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
