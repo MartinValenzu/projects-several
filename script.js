@@ -208,7 +208,11 @@ const revealElements = document.querySelectorAll(
   "main section .contact-info"
 );
 
-if ("IntersectionObserver" in window) {
+const reduceMotion = window.matchMedia(
+  "(prefers-reduced-motion: reduce)"
+).matches;
+
+if ("IntersectionObserver" in window && !reduceMotion) {
 
   const revealObserver = new IntersectionObserver(
     (entries, observer) => {
@@ -227,17 +231,14 @@ if ("IntersectionObserver" in window) {
 
     },
     {
-      threshold: 0.12,
-      rootMargin: "0px 0px -35px 0px"
+      threshold: 0.10,
+      rootMargin: "0px 0px -30px 0px"
     }
   );
 
-  revealElements.forEach((element, index) => {
-
+  revealElements.forEach((element) => {
     element.classList.add("reveal");
-
     revealObserver.observe(element);
-
   });
 
 } else {
