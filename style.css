@@ -275,7 +275,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 ================================= */
 
 .projects-section {
-  background: #0a1121;
+  background: transparent;
 }
 
 .projects-grid {
@@ -629,11 +629,6 @@ button, a { -webkit-tap-highlight-color: transparent; }
   color: #cbd5e1;
   font-size: .83rem;
   line-height: 1.8;
-}
-
-@keyframes detailsAppear {
-  from { opacity: 0; transform: translateY(-6px); }
-  to { opacity: 1; transform: translateY(0); }
 }
 
 /* Accesibilidad y movimiento */
@@ -1260,41 +1255,30 @@ main section[id] {
     font-size: .72rem;
   }
 }
-
 /* =================================
    FONDO TECNOLÓGICO GLOBAL
 ================================= */
 
 body {
-  position: relative;
-  isolation: isolate;
-}
-
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  pointer-events: none;
-
-  background:
+  background-color: #080d1b;
+  background-image:
     radial-gradient(
-      ellipse at 12% 20%,
-      rgba(59, 130, 246, .12),
-      transparent 35%
+      ellipse at 12% 15%,
+      rgba(59, 130, 246, 0.13),
+      transparent 38%
     ),
     radial-gradient(
       ellipse at 88% 45%,
-      rgba(139, 92, 246, .11),
-      transparent 36%
+      rgba(154, 101, 255, 0.12),
+      transparent 38%
     ),
     linear-gradient(
-      rgba(120, 150, 210, .025) 1px,
+      rgba(120, 150, 210, 0.025) 1px,
       transparent 1px
     ),
     linear-gradient(
       90deg,
-      rgba(120, 150, 210, .025) 1px,
+      rgba(120, 150, 210, 0.025) 1px,
       transparent 1px
     );
 
@@ -1304,29 +1288,20 @@ body::before {
     45px 45px,
     45px 45px;
 
-  animation: ambientBackground 18s ease-in-out infinite alternate;
+  background-attachment: fixed;
 }
 
-@keyframes ambientBackground {
-  from {
-    background-position: 0 0, 0 0, 0 0, 0 0;
-  }
-
-  to {
-    background-position: 25px 15px, -20px 25px, 0 0, 0 0;
-  }
-}
 
 /* =================================
-   ANIMACIONES AL DESPLAZARSE
+   ANIMACIONES DE APARICIÓN
 ================================= */
 
 .reveal {
   opacity: 0;
-  transform: translateY(28px);
+  transform: translateY(25px);
   transition:
-    opacity .7s ease,
-    transform .7s cubic-bezier(.2, .7, .2, 1);
+    opacity 0.7s ease,
+    transform 0.7s ease;
 }
 
 .reveal.is-visible {
@@ -1337,10 +1312,6 @@ body::before {
 /* Accesibilidad */
 
 @media (prefers-reduced-motion: reduce) {
-  body::before {
-    animation: none;
-  }
-
   .reveal,
   .reveal.is-visible {
     opacity: 1;
